@@ -59,6 +59,9 @@
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\Camera_Control.cs" />
     <Compile Include="Assets\Script\Leaf.cs" />
+    <Compile Include="Assets\Script\Floor.cs" />
+    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Pond.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

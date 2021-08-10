@@ -57,17 +57,10 @@ public class Player : MonoBehaviour
             space = true;
         }
 
-        if (onground)
+        
+        if (Input.GetKey(KeyCode.Space))
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                aniname = "Player_Animation_Jump";
-            }
-            else
-            {
-                aniname = "Player_animation";
-            }
-
+            aniname = "Player_Animation_Jump";
         }
 
         if (Input.GetKey(KeyCode.Space) == false && onground)
