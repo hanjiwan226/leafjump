@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     bool space;
     Rigidbody2D rigid;
     public float slope;
+    float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer = timer + Time.deltaTime;
+
         string aniname = "Player_Animation_Idle";
 
         if (Input.GetKey(KeyCode.RightArrow))
@@ -40,12 +43,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            starttime = Time.time;
+            starttime = timer;
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && onground)
         {
-            presstime = Time.time - starttime;
+            presstime = timer - starttime;
             if (presstime < 0.5f)
             {
                 presstime = 0.5f;
