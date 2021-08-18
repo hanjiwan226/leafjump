@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         stagenum++;
         Destroy(player);
         playstage = Instantiate(stage[stagenum - 1]);
+        Debug.Log(stagenum - 1);
         Invoke("Initstage", 0.3f);
     }
 

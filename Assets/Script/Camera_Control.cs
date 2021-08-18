@@ -6,7 +6,8 @@ public class Camera_Control : MonoBehaviour
 {
     public GameObject player;
     public GameObject point;
-    public Vector2 velocity;
+    public float velx;
+    public float vely;
     public float smoothTimeX;
     public float smoothTimeY;
     public bool cameraBool;
@@ -30,9 +31,9 @@ public class Camera_Control : MonoBehaviour
     {
         if (player != null)
         {
-            float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
+            float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velx, smoothTimeX);
 
-            float posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
+            float posY = Mathf.SmoothDamp(transform.position.y, player.transform.position.y, ref vely, smoothTimeY);
 
             this.transform.position = new Vector3(posX, posY, -20);
         }
