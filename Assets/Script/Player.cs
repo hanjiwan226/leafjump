@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-
         bool onground = IsOnGround();
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -48,6 +47,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space) && onground)
         {
+            this.GetComponent<ParticleSystem>().Play();
             presstime = timer - starttime;
             if (presstime < 0.5f)
             {
